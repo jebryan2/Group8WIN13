@@ -1,0 +1,141 @@
+<?php
+     
+
+ 
+       
+      
+	mysql_connect('localhost', 'samin', 'menvpAY2yNpHqKGj') or die (mysql_error()) ; 
+	mysql_select_db('samin') or die (mysql_error());
+	
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Netmart</title>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+              <link href="css/focusin.css" rel="stylesheet" type="text/css"> <!--change background of input-->
+		<script type = "text/javascript" src = "js/jquery.js"> </script>
+		<script type = "text/javascript" src = "js/func.js"> </script>
+
+
+		<!-- link short icon missing--> 
+
+		</head>
+<body>
+
+
+
+<body class ="body_color">
+		<div id = "wrapper">
+					
+					
+					<div id="header">                        <!-- main header-->
+						
+						<div id="topheader">	         <!-- top header-->
+
+                                                                         <form action = 'php/login.php' method='POST'>
+							                         <p> Username:<input type="text" name ="username">
+										     Password:<input type="password" name="password"><br>
+										   <input type="submit" value="Sign In"> 
+										   </form>
+
+										   <a href="php/register.php">Register</a>
+										   <a href="php/member.php">Member Page</a> 
+										 
+					        </div id="topheader" >
+							
+							
+							<a href="index1.html">	
+							<img src=img/netmartlogo.jpeg alt="Smiley face" height="150" width="500"> <!-- link back to index page--> 
+							</a>
+							       
+								     <h1> 	<a href ="index1.html">home</a>
+										<a href ="aboutus.html">about us</a>
+										<a href ="ourservices.html">our services</a>
+                                                                      <a href ="contactus.html">contact us</a> 
+								     </h1>
+
+									<h3>
+									<a href="php/camera.php">Cameras</a>
+									<a href="php/cellphones.php">Cellphones</a>
+									<a href="php/software.php">Software</a>
+									<a href="php/PC&laptop.php">PCs & laptops</a>
+									<a href="php/television.php">television</a>
+
+									</h3>
+                                                                      <form method="POST" action="">
+                                                                     <strong> search department:</strong> <input type="text" name="searchbox" maxlength="50" size="100"/>
+									      <input type="submit" value="GO"/>  
+
+										</form>		
+										
+					</div id ="header">
+					<div id ="body">
+					
+					
+							<h2> Daily Deals </h2>
+                                                        <div class = "content_deals">
+                                                            <table width ="490">
+				                                          <td> 
+						                             </td>
+						
+				                                           <td>
+
+										<?php 
+                                                                                   
+												if(isset($_POST['searchbox']))
+												{
+												        $searchbox =($_POST['searchbox']); 
+												        $query=("SELECT * FROM onlineproducts WHERE $searchbox ='$something'") 
+														
+                                                                                               
+											        }
+
+
+
+
+
+                                                                        ?>
+						                              </td>				                                           
+
+				                                           <td> 
+						                             </td>
+
+				  
+				                                           <td> 
+					                                      
+				  
+				                                           </td>
+
+                                                                        <td> 
+						                                    <a href=""><img src= img/sjfs.jpg alt="Smiley face" height="100" width="150"></a><br>
+					                                     	 <s>$68.99</s>
+						                                      <h2>  $48.99 </h2>
+						                                     EVGA 02G-P4-2643-RX GeForce GT 640 2GB 128-bit DDR3
+				  
+				                                             </td>
+
+				                                     </table>	                                                               	
+								</div class = "content_deals">
+							
+					</div id ="body">
+					
+					
+					
+					
+					
+			
+		</div id ="wrapper">
+</body>
+
+	<div id ="footer">
+
+	<div class ="smalltext">
+		Copyright © 2013 Netmart Inc. All rights reserved.
+	</div class = "smalltext">
+
+	</div id ="footer">
+
+</html>
