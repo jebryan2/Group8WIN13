@@ -3,7 +3,7 @@
 
  
        
-      
+    	
 	mysql_connect('localhost', 'samin', 'menvpAY2yNpHqKGj') or die (mysql_error()) ; 
 	mysql_select_db('samin') or die (mysql_error());
 	
@@ -20,122 +20,115 @@
 		<script type = "text/javascript" src = "js/func.js"> </script>
 
 
-		<!-- link short icon missing--> 
+	     <!-- image fade -->
+		<style type="text/css">
 
-		</head>
+			#wrap 
+			{
+			height: 375px;
+			width: 960px;
+			margin: 0 auto;
+			overflow: hidden;
+			}
+			#wrap img { display:none; }
+			#wrap .is-showing { display: inline; }
+			
+			</style>
+
+
+</head>
 <body>
 
 
 
-<body class ="body_color">
+	<body class ="body_color">
 		<div id = "wrapper">
 					
 					
 					<div id="header">                        <!-- main header-->
 						
-						<div id="topheader">	         <!-- top header-->
+								<div id="topheader">	     <!-- top header-->
 
-                                                                         <form action = 'php/login.php' method='POST'>
+                                           <form action = 'php/login.php' method='POST'>
 							                         <p> Username:<input type="text" name ="username">
-										     Password:<input type="password" name="password"><br>
-										   <input type="submit" value="Sign In"> 
+														 Password:<input type="password" name="password"><br>
+													<input type="submit" value="Sign In"> 
 										   </form>
 
 										   <a href="php/register.php">Register</a>
 										   <a href="php/member.php">Member Page</a> 
 										 
-					        </div id="topheader" >
+								</div id="topheader" >
 							
 							
-							<a href="index1.html">	
-							<img src=img/netmartlogo.jpeg alt="Smiley face" height="150" width="500"> <!-- link back to index page--> 
-							</a>
+						<a href="index1.html">	
+						<img src=img/netmartlogo.jpeg alt="Smiley face" height="150" width="500"> <!-- link back to index page--> 
+						</a>
 							       
-								     <h1> 	<a href ="index1.html">home</a>
-										<a href ="aboutus.html">about us</a>
-										<a href ="ourservices.html">our services</a>
-                                                                      <a href ="contactus.html">contact us</a> 
-								     </h1>
+						<h1> <a href ="index1.html">home</a>
+						<a href ="aboutus.html">about us</a>
+						<a href ="ourservices.html">our services</a>
+                        <a href ="contactus.html">contact us</a> 
+					    </h1>
 
-									<h3>
-									<a href="php/camera.php">Cameras</a>
-									<a href="php/cellphones.php">Cellphones</a>
-									<a href="php/software.php">Software</a>
-									<a href="php/PC&laptop.php">PCs & laptops</a>
-									<a href="php/television.php">television</a>
+						<h3>
+						<a href="php/camera.php">Cameras</a>
+						<a href="php/cellphones.php">Cellphones</a>
+						<a href="php/software.php">Software</a>
+						<a href="php/PC&laptop.php">PCs & Laptops</a>
+						<a href="php/television.php">Television</a>
 
-									</h3>
-                                                                      <form method="POST" action="">
-                                                                     <strong> search department:</strong> <input type="text" name="searchbox" maxlength="50" size="100"/>
-									      <input type="submit" value="GO"/>  
-
-										</form>		
+						</h3>
+                        
+						
 										
-					</div id ="header">
+				   </div id ="header">
+				   
 					<div id ="body">
 					
 					
-							<h2> Daily Deals </h2>
-                                                        <div class = "content_deals">
-                                                            <table width ="490">
-				                                          <td> 
-						                             </td>
-						
-				                                           <td>
+							<h2> OUR PRODUCTS </h2>
+							 
+                               <table border= "2" color='blue' align ="center"> 
+                                               <td>                  
+								<div id="wrap">
+									<img src="img/laptop and pc/sony vio.jpg" width="960" height="375" alt="image 1" class="is-showing" />
+									<img src="img/cellphones/Samsung Galaxy Note II.jpg" width="960" height="375" alt="image 2"  />
+									<img src="img/softwares/Adobe Dreamweaver.jpg" width="960" height="375" alt="image 3"  />
+        
+								</div id ="wrap">
+    
+								<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+								<script type="text/javascript">
+									$(document).ready(function(){
+									slideShow();
+									});
 
-										<?php 
-                                                                                   
-												if(isset($_POST['searchbox']))
-												{
-												        $searchbox =($_POST['searchbox']); 
-												        $query=("SELECT * FROM onlineproducts WHERE $searchbox ='$something'") 
-														
-                                                                                               
-											        }
+									function slideShow() {
+  
+									var showing = $('#wrap .is-showing');
+									var next = showing.next().length ? showing.next() : showing.parent().children(':first');
 
+									showing.fadeOut(800, function() { next.fadeIn(800).addClass('is-showing'); }).removeClass('is-showing');
+  
+									setTimeout(slideShow, 5000);
+									}
 
+								</script>   
 
-
-
-                                                                        ?>
-						                              </td>				                                           
-
-				                                           <td> 
-						                             </td>
-
-				  
-				                                           <td> 
-					                                      
-				  
-				                                           </td>
-
-                                                                        <td> 
-						                                    <a href=""><img src= img/sjfs.jpg alt="Smiley face" height="100" width="150"></a><br>
-					                                     	 <s>$68.99</s>
-						                                      <h2>  $48.99 </h2>
-						                                     EVGA 02G-P4-2643-RX GeForce GT 640 2GB 128-bit DDR3
-				  
-				                                             </td>
-
-				                                     </table>	                                                               	
-								</div class = "content_deals">
-							
-					</div id ="body">
-					
-					
-					
-					
-					
+							</td>
+						   </table>
+						</div id ="body">					
 			
-		</div id ="wrapper">
-</body>
+				</div id ="wrapper">
+		</body>
 
-	<div id ="footer">
+		<div id ="footer">
 
-	<div class ="smalltext">
-		Copyright © 2013 Netmart Inc. All rights reserved.
-	</div class = "smalltext">
+			<div class ="smalltext">
+				Copyright © 2013 Netmart Inc. All rights reserved.
+			</div class = "smalltext">
 
-	</div id ="footer">
+		</div id ="footer">
 
 </html>
